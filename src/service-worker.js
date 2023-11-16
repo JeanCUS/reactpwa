@@ -1,4 +1,7 @@
 /* service worker */
+import { precacheAndRoute } from 'workbox-precaching';
+/* eslint-disable no-restricted-globals */
+precacheAndRoute(self.__WB_MANIFEST || []);
 
 // Nombre del caché
 const CACHE_NAME = 'mi-pwa-cache';
@@ -15,6 +18,7 @@ const urlsToCache = [
 ];
 
 // Instalación del Service Worker
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -54,3 +58,4 @@ self.addEventListener('activate', (event) => {
     })
   );
 });
+/* eslint-enable no-restricted-globals */
