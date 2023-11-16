@@ -31,7 +31,7 @@ export const Forms = () => {
   }, []);
 
   const handleAnswerButtonClick = (formId) => {
-    const answerLink = `http://localhost:3000/forms/${formId}/answer`;
+    const answerLink = `${window.location.origin}/forms/${formId}/answer`;
     setTimeout(() => {
       navigator.clipboard
         .writeText(answerLink)
