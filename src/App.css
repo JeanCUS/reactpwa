@@ -1,38 +1,281 @@
-.App {
+* {
+
+  transition: all 0.2s;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
+  list-style-type: none;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-end;
+}
+
+nav li {
+  margin-right: 0.2em;
+  cursor: pointer;
+}
+
+nav li a {
+  text-decoration: none;
+  background-color: rgb(80, 135, 102);
+  color: #ddd;
+  padding: 0.4em;
+  border-radius: 5px;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  background-color: rgb(60, 92, 73);
+}
+
+/* nav li:hover {
+  text-decoration: underline;
+} */
+
+main {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0.1em;
+  padding: 0.5em;
+  border: 0px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.botones {
+  background-color: rgb(40, 139, 40);
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.botones:hover {
+  background-color: rgb(52, 109, 52);
+  cursor: pointer;
+}
+
+.eliminar {
+  background-color: rgb(190, 36, 36);
+  border-radius: 5px;
+
+}
+
+.eliminar:hover {
+  background-color: rgb(133, 45, 45);
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .forms table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .forms th,
+  .forms td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .forms th {
+    background-color: #333;
+    color: white;
+  }
+
+  .forms button {
+    margin-bottom: 10px;
+  }
+}
+
+/* Styles for the table outside of max-width: 600px */
+.forms table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.forms th,
+.forms td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.forms th {
+  background-color: #333;
+  color: white;
+}
+
+.forms button {
+  margin-bottom: 10px;
+}
+
+.create-forms {
+  margin-top: 20px;
+}
+
+.create-forms h2 {
+  color: #333;
+}
+
+.create-forms label {
+  display: block;
+  margin-top: 10px;
+}
+
+.create-forms input,
+.create-forms select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.create-forms h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.create-forms h4 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.create-forms button {
+  background-color: #3c5c49;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.create-forms button:hover {
+  background-color: #33483b;
+}
+
+.create-forms ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.create-forms li {
+  margin-bottom: 10px;
+}
+
+.create-forms li button {
+  background-color: #af2626;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.create-forms li button:hover {
+  background-color: #7d1f1f;
+}
+
+/* Estilos Responsive para CreateForms */
+@media (max-width: 600px) {
+  .create-forms input,
+  .create-forms select {
+    width: calc(100% - 20px);
+    margin-right: 0;
+  }
+}
+/* Agrega estos estilos al archivo CSS correspondiente o crea uno nuevo */
+
+* {
+  transition: all 0.2s;
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-question {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+.checkbox-option {
+  margin-top: 8px;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(40, 139, 40);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(52, 109, 52);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  input[type="text"],
+  input[type="checkbox"] {
+    width: calc(100% - 16px);
+  }
+
+  button {
+    margin-top: 10px;
   }
 }

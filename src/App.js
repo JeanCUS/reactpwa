@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, BrowserRouter as Router, Link } from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import { Forms } from "./components/Forms";
+import { CreateForms } from "./components/CreateForms";
+import AnswerForm from "./components/AnswerForm";
+import FormResponses from "./components/FormResponses";
+
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const changePage = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <header>
+          <h1>Formulario React</h1>
+          <nav>
+            <ul>
+              <li>
+                <Link className="menu" to="/">Inicio</Link>
+              </li>
+              <li>
+                <Link className="menu" to="/forms/create">Formularios</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <Forms />
+                </div>
+              }
+            />
+            <Route path="/forms" element={<Forms />} />
+            <Route path="/forms/create" element={<CreateForms />} />
+            <Route path="/forms/:formId/answer" element={<AnswerForm />} />
+            <Route path="/forms/:formId/responses" element={<FormResponses />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
